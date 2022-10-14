@@ -16,17 +16,18 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function repeater(str, options) {
-  let add = options.addition || null ;
+  let add = options.addition || null;
   let repeatStr = options.repeatTimes || 1;
   let repeatAdd = options.additionRepeatTimes || 1;
   let sepStr = options.separator || "+";
-  let sepAdd = options.additionSeparator || '|';
+  let sepAdd = options.additionSeparator || "|";
 
   let bigStr = "";
   function addRepeat(add) {
-    return (bigStr = Array(repeatAdd).fill(add).join(sepAdd));
-  }
+   
+    return (bigStr = Array(repeatAdd).fill(add).join(sepAdd));}
   
+
   return Array(repeatStr)
     .fill(str + `${addRepeat(add)}`)
     .join(sepStr);
@@ -35,4 +36,12 @@ function repeater(str, options) {
 module.exports = {
   repeater,
 };
-console.log(repeater(true, { repeatTimes: 3, separator: '??? ', addition: false, additionRepeatTimes: 2, additionSeparator: '!!!' }))
+console.log(
+  repeater(true, {
+    repeatTimes: 3,
+    separator: "??? ",
+    addition: false,
+    additionRepeatTimes: 2,
+    additionSeparator: "!!!",
+  })
+);
