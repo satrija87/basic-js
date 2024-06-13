@@ -24,9 +24,8 @@ function repeater(str, options) {
 
   let bigStr = "";
   function addRepeat(add) {
-   
-    return (bigStr = Array(repeatAdd).fill(add).join(sepAdd));}
-  
+    return (bigStr = Array(repeatAdd).fill(add).join(sepAdd));
+  }
 
   return Array(repeatStr)
     .fill(str + `${addRepeat(add)}`)
